@@ -42,6 +42,7 @@
      }
   }
   
+  h1 {text-align: center}
 h2 { text-align: center;
 background-color: aqua}
 
@@ -51,23 +52,106 @@ header {
   }
   main {
     grid-area: main;
-    background-color: red
   }
   nav {
     grid-area: nav;
-    background-color: pink
   }
   aside {
     grid-area: aside;
-    background-color: orangered
   }
   .banner {
     grid-area: banner;
     background-color: orange
   }
   footer {
-    grid-area: footer;
-    background-color: green 
+    grid-area: footer; 
+  }
+
+  .clock {
+    height: 400px;
+    width: 220px;
+    margin: 0 auto;
+  }
+  .clock .body-top {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    border-radius: 400px 400px 0 0;
+    background-color: #B28247;
+  }
+  .body-top .dial {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    border-radius: 200px;
+    background-color: #C9BC9C;
+  }
+  .dial .second-hand {
+    height: 74px;
+    width: 10px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 2;
+    -webkit-transform: translate(70px, 75px) rotate(180deg);
+    transform: translate(70px, 75px) rotate(180deg);
+    -webkit-transform-origin: 50% 5px;
+    transform-origin: 50% 5px;
+    background-color: #7F4F21;
+  }
+  .dial .minute-hand {
+    height: 70px;
+    width: 10px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 3;
+    -webkit-transform: translate(70px, 75px) rotate(180deg);
+    transform: translate(70px, 75px) rotate(180deg);
+    -webkit-transform-origin: 50% 5px;
+    transform-origin: 50% 5px;
+    background-color: #40220F;
+  }
+  .dial .hour-hand {
+    height: 50px;
+    width: 10px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 4;
+    -webkit-transform: translate(70px, 75px) rotate(180deg);
+    transform: translate(70px, 75px) rotate(180deg);
+    -webkit-transform-origin: 50% 5px;
+    transform-origin: 50% 5px;
+    background-color: black;
+  }
+  .clock .body-bottom {
+    position: relative;
+    z-index: -1;
+    height: 190px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: #7F4F21;
+  }
+  .body-bottom .pendulum {
+    height: 140px;
+    /* -webkit-transform-origin: 50% -70%; */
+    /* transform-origin: 50% -70%; */
+  }
+  .pendulum .pendulum-stick {
+    height: 70%;
+    width: 12px;
+    margin: 0 auto;
+    background-color: black;
+  }
+  .pendulum .pendulum-body {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 0 auto;
+    margin-top: -2px;
+    background-color: #40220F;
   }
 
 

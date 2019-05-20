@@ -8,28 +8,37 @@
     <title>Dashboard</title>
 </head>
 <body>
-  
- <h2 class="greeting"> Welcome to my Dashboard </h2>
             
  <div class="container">
-    <header>header</header>
+    <header> <h1> Welcome to my Dashboard</h1></header>
     <nav>
       <ul>
-        <li><a href="#">nav 1</a></li>
-        <li><a href="#">nav 2</a></li>
-        <li><a href="#">nav 3</a></li>
+          <li> <p> <a href=" https://codepen.io/liuyanghejerry/pen/IuCFo/">Clock</a> </p> </li>
+        <li> <p> <a href="https://weatherwidget.io/">Weather</a> </p> </li>
+        <li> <p> <a href="https://theuselessweb.com/">Click Here For A Good Time!!!</a> </p> </li>
+        <li> <p> <a href="./images/wireFrame images/mobilewireframe.JPG"> Mobile wireframe image</a> </p> </li>
+        <li> <p> <a href="./images/wireFrame images/tablet&desktop.jpg"> Tablet wireframe images</a> </p> </li>
       </ul>
     </nav>
     <main>
-      <h1>Main Title</h1>
-      <p>Main content</p>
+      <div class="clock">
+        <div class="body-top">
+          <div class="dial">
+            <div class="second-hand"></div>
+            <div class="minute-hand"></div>
+            <div class="hour-hand"></div>
+          </div>
+        </div>
+        <div class="body-bottom">
+          <div class="pendulum">
+            <div class="pendulum-stick"></div>
+            <div class="pendulum-body"></div>
+          </div>
+        </div>
+      </div>
     </main>
-    <aside>aside</aside>
-    <div class="banner">div.banner</div>
-    <footer>footer</footer>
-  </div>
-
-      <div id="calculatorContainer"> 
+    <aside> 
+        <div id="calculatorContainer"> 
             <button id="clear"> clear</button>
             <button id="equals">=</button>
             <button id="mutiply">*</button>
@@ -47,103 +56,21 @@
             <button id="eight">8</button>
             <button id="nine">9</button>
             </div>
+    </aside>
 
-            <div id=" clockContainer">
-                <canvas id="canvas" width="400" height="400"
-                style="background-color:#333">
-                </canvas>
-                
-                <script>
-                var canvas = document.getElementById("canvas");
-                var ctx = canvas.getContext("2d");
-                var radius = canvas.height / 2;
-                ctx.translate(radius, radius);
-                radius = radius * 0.90
-                setInterval(drawClock, 1000);
-                
-                function drawClock() {
-                  drawFace(ctx, radius);
-                  drawNumbers(ctx, radius);
-                  drawTime(ctx, radius);
-                }
-                
-                function drawFace(ctx, radius) {
-                  var grad;
-                  ctx.beginPath();
-                  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-                  ctx.fillStyle = 'white';
-                  ctx.fill();
-                  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-                  grad.addColorStop(0, '#333');
-                  grad.addColorStop(0.5, 'white');
-                  grad.addColorStop(1, '#333');
-                  ctx.strokeStyle = grad;
-                  ctx.lineWidth = radius*0.1;
-                  ctx.stroke();
-                  ctx.beginPath();
-                  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-                  ctx.fillStyle = '#333';
-                  ctx.fill();
-                }
-                
-                function drawNumbers(ctx, radius) {
-                  var ang;
-                  var num;
-                  ctx.font = radius*0.15 + "px arial";
-                  ctx.textBaseline="middle";
-                  ctx.textAlign="center";
-                  for(num = 1; num < 13; num++){
-                    ang = num * Math.PI / 6;
-                    ctx.rotate(ang);
-                    ctx.translate(0, -radius*0.85);
-                    ctx.rotate(-ang);
-                    ctx.fillText(num.toString(), 0, 0);
-                    ctx.rotate(ang);
-                    ctx.translate(0, radius*0.85);
-                    ctx.rotate(-ang);
-                  }
-                }
-                
-                function drawTime(ctx, radius){
-                    var now = new Date();
-                    var hour = now.getHours();
-                    var minute = now.getMinutes();
-                    var second = now.getSeconds();
-                    //hour
-                    hour=hour%12;
-                    hour=(hour*Math.PI/6)+
-                    (minute*Math.PI/(6*60))+
-                    (second*Math.PI/(360*60));
-                    drawHand(ctx, hour, radius*0.5, radius*0.07);
-                    //minute
-                    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-                    drawHand(ctx, minute, radius*0.8, radius*0.07);
-                    // second
-                    second=(second*Math.PI/30);
-                    drawHand(ctx, second, radius*0.9, radius*0.02);
-                }
-                
-                function drawHand(ctx, pos, length, width) {
-                    ctx.beginPath();
-                    ctx.lineWidth = width;
-                    ctx.lineCap = "round";
-                    ctx.moveTo(0,0);
-                    ctx.rotate(pos);
-                    ctx.lineTo(0, -length);
-                    ctx.stroke();
-                    ctx.rotate(-pos);
-                }
-                </script>
-    
+  <div class="weatherwidget"> <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="Lubbock" data-label_2="WEATHER" data-theme="original" >Lubbock WEATHER</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script></div>
 
-    
-    <div class="month">      
+    <footer>
+      <div class="month">      
       <ul>
         <li class="prev">&#10094;</li>
         <li class="next">&#10095;</li>
         <li>
-          August<br>
-          <span style="font-size:18px">2017</span>
+          June<br>
+          <span style="font-size:18px">2019</span>
         </li>
       </ul>
     </div>
@@ -191,6 +118,9 @@
       <li>30</li>
       <li>31</li>
     </ul>
+  </footer>
+  </div>
+
 
 </body>
 </html>
